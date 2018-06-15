@@ -16,5 +16,6 @@ const Cat = (opts) => {
 }
 
 const casey = Cat({ furry, meows, slinks})
+const bodie = Dog({ furry, barks, isAClutz})
+
 console.log(casey.furry)
-console.log(casey.meows)
