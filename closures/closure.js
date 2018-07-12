@@ -1,22 +1,17 @@
 console.log("working")
 
 const closure = (x, y) => {
-  var h = "hoisted";
-  x = 24;
-  y = 25;
-  return (z) => {
-    let add;
+  return (z = 0) => {
     if (z) {
-      add = x + y + z;
+      return x + y + z;
     } else {
-      add = x + y;
+      return x + y;
     }
-    return add
   }
-
-  return x + y;
 }
 
-let c = closure(24, 68);
+let addZ = closure(50, 50);
+let z = addZ();
 
-console.log(c)
+console.log(closure(50,50)())
+console.log(closure(50,50)(800))
