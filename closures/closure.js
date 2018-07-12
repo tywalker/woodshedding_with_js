@@ -1,6 +1,6 @@
 console.log("working")
 
-const closure = (x, y) => {
+const closureCurry = (x, y) => {
   return (z = 0) => {
     if (z) {
       return x + y + z;
@@ -10,8 +10,15 @@ const closure = (x, y) => {
   }
 }
 
-let addZ = closure(50, 50);
-let z = addZ();
+const closure = () => {
+  let x = 14;
+  let y = 20;
+  const returnOuterValues = () => {
+    return x * y;
+  }
 
-console.log(closure(50,50)())
-console.log(closure(50,50)(800))
+  return returnOuterValues();
+}
+
+let answer = closure();
+console.log(answer)
